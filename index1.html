@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WasifWorks | Frontend Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+
+    nav .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00f7ff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #00f7ff;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      color: #00f7ff;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    header p {
+      max-width: 600px;
+      line-height: 1.6;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    header .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 2px solid #00f7ff;
+      color: #00f7ff;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: 0.3s;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    header .btn:hover {
+      background: #00f7ff;
+      color: #0d0d0d;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 1;}
+    }
+
+    /* About Section */
+    section {
+      padding: 100px 50px;
+    }
+    .about2{align-items: center;}
+
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+
+
+    .about .content {
+     
+      max-width: 600px;
+      animation: fadeInRight 1s ease forwards;
+    }
+
+    .about h2 {
+     
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00f7ff;
+    }
+
+    .about p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeInLeft {
+      0% { opacity: 0; transform: translateX(-50px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes fadeInRight {
+      0% { opacity: 0; transform: translateX(50px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+
+    /* Skills Section */
+    .skills {
+      text-align: center;
+    }
+
+    .skills h2 {
+      font-size: 2rem;
+      color: #00f7ff;
+      margin-bottom: 50px;
+    }
+
+    .skills .skill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .skill {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 20px;
+      width: 150px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      background: #00f7ff;
+      color: #0d0d0d;
+    }
+ a { color: #00f7ff; text-decoration: none; }
+.contact-section { text-align: center; padding: 80px 20px; }
+.contact-section h2 { font-size: 2rem; color: #00f7ff; margin-bottom: 20px; }
+.social-links { display: flex; justify-content: center; gap: 25px; margin-top: 30px; flex-wrap: wrap; }
+.social-links a { display: flex; align-items: center; gap: 10px; padding: 12px 20px; border: 2px solid #00f7ff; border-radius: 30px; transition: 0.3s; font-weight: 600; }
+.social-links a:hover { background: #00f7ff; color: #0d0d0d; }
+.social-links i { font-size: 1.2rem; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px;
+      background: #111;
+      color: #aaa;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 20px 30px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .about {
+        flex-direction: column;
+      }
+
+      .about img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">WasifWorks</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Hi, I'm WasifWorks</h1>
+    <h2>Frontend Developer & Web Enthusiast</h2>
+    <p>I build modern, responsive websites with clean code and smooth animations. I love bringing ideas to life on the web.</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about">
+    
+      <div class="content">
+       <div class="about2"> <h2>About Me</h2></div>
+        <p>Hello! I'm WasifWorks, a passionate frontend developer. I specialize in HTML, CSS, and JavaScript, creating interactive and visually appealing websites. I enjoy learning new technologies and improving my coding skills every day.</p>
+        <p>My goal is to craft beautiful user interfaces and smooth user experiences while maintaining clean, efficient code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <div class="skill-container">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Tailwind CSS</div>
+      <div class="skill">Bootstrap</div>
+    </div>
+  </section>
+
+
+<section class="contact-section" id="contact">
+<h2>Get in Touch</h2>
+<p>Connect with me on my social platforms!</p>
+
+
+<div class="social-links">
+<a href="https://github.com/wasifworks" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+<a href="https://www.instagram.com/wasif__1_/?hl=" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.linkedin.com/in/muhammad-wasif-37962637a/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://discord.com/users/wasif" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+<a href="mailto:wasifmuhammad000@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+</div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 WasifWorks. All rights reserved.
+  </footer>
+
+</body>
+</html>
